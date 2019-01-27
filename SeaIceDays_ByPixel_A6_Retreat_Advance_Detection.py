@@ -1,14 +1,14 @@
 '''*********************************************
 Authors: Alex Crawford
 Date Created: 6/9/15
-Date Modified: 5/11/18
+Date Modified: 1/28/19
 Purpose: To calculate the day of the year on which sea ice retreats and
 advances in each grid cell of a particular sector each year.
 
 Inputs: 
-    concentration threshold (concThresh) -- value between 0 and 1
-    years of interest (years) -- two integers in a range function
-    startmonth -- the month on which to start the annual cycle -- March (3) is
+    concentration threshold (cts) -- value between 0 and 1
+    years of interest (ymin, ymax) -- integers
+    months for  -- the month on which to start the annual cycle -- March (3) is
         a good idea because it is the closest to the maximum
     
 Outputs: A csv file with the concentration threshold and setor noted in the 
@@ -43,8 +43,8 @@ n = 2 # Moving Average Size (n = # observation on either side of current day;
 
 ### Time Variables ###
 ymin, ymax = 1986, 2017 # to 1998 to 2002
-maxmo = [1,4]
-minmo = [8,10]
+maxmo = [1,4] # months in which the sea ice maximum may occur
+minmo = [8,10] # months in which the sea ice minimum may occur
 
 ### Path Variables ###
 path = "/Volumes/MIRANDA/"
